@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EventTechX</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+    font-family: Arial, sans-serif;
+}
+
+header, footer {
+    background-color: #333;
+    color: white;
+    padding: 1em;
+}
+
+main {
+    padding: 1em;
+}
+
+form {
+    margin-top: 1em;
+}
+
+button {
+    padding: 0.5em 1em;
+}
+
+    </style>
+</head>
+<body>
+    <header>
+        <h1>EventTechX</h1>
+    </header>
+
+    <main>
+        <h2>Events</h2>
+        <ul id="eventList"></ul>
+        <form id="eventForm">
+            <input type="text" id="eventName" placeholder="Event Name" required>
+            <input type="text" id="eventDescription" placeholder="Event Description" required>
+            <input type="date" id="eventDate" required>
+            <button type="submit">Create Event</button>
+        </form>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 EventTechX</p>
+    </footer>
+
+    <script src="script.js">
+        document.addEventListener('DOMContentLoaded', () => {
+    const eventList = document.getElementById('eventList');
+    const eventForm = document.getElementById('eventForm');
+
+    // Function to fetch events from backend and render on the page
+    const fetchEvents = async () => {
+        eventList.innerHTML = ''; // Clear previous list
+        const response = await fetch('/api/events');
+        const events = await response.json();
+        events.forEach(event => {
+            const li = document.createElement('li');
+            li.textContent = `${event.name} - ${event.date}`;
+            eventList.appendChild(li);
+        });
+    };
+
+    // Function to handle form submission
+    eventForm.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const eventName = document.getElementById('eventName').value;
+        const eventDescription = document.getElementById('eventDescription').value;
+        const eventDate = document.getElementById('eventDate').value;
+        const response = await fetch('/api/events', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                name: eventName,
+                description: eventDescription,
+                date: eventDate
+            })
+        });
+        if (response.ok) {
+            fetchEvents(); // Refresh event list after adding new event
+        } else {
+            alert('Failed to create event');
+        }
+    });
+
+    // Fetch events on page load
+    fetchEvents();
+});
+
+    </script>
+</body>
+</html>

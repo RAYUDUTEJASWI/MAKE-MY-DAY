@@ -1,0 +1,84 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar {
+    background-color:white;
+    color:black;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1em;
+}
+
+.navbar-left {
+    display: flex;
+    align-items: center;
+}
+
+.navbar-left h1 {
+    margin: 0;
+}
+
+.navbar-left form {
+    margin-left: 1em;
+}
+
+.navbar-left input[type="text"] {
+    padding: 0.5em;
+    font-size: 1em;
+}
+
+.navbar-left button {
+    padding: 0.5em 1em;
+    font-size: 1em;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.navbar-right input[type="date"], 
+.navbar-right select,
+.navbar-right input[type="number"] {
+    padding: 0.5em;
+    font-size: 1em;
+    margin-left: 1em;
+}
+#btn{
+    background-color: blue;
+    height: inherit;
+    width: 100px;
+}
+.back{
+    background-color: black;
+}
+#pic img{
+    height: 25vh;
+    width: 200px;
+}
+#pic p{
+    display: none;
+    align-items: center;
+
+}
+#pic:hover p{
+    display: block;
+    align-items: center;
+}
+
+#log{display: flex;
+    flex-direction: column;
+    
+
+}
+.navbar-brand{
+    padding: 0%;
+    margin: 0%;
+
+}
+#sub{
+    font-size: small;
+}

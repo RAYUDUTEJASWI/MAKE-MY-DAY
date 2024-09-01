@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="booknow.css">
+    <style>
+        /* CSS styles for image container ----for images in page */
+        .image-container {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        /* CSS styles for individual images */
+        .image-container img {
+            width: 450px;
+            height: 400px;
+            object-fit: cover;
+            border-radius: 5px;
+        }
+
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .photo-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .photo-container img {
+            width: 200px;
+            height: auto;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: transform 0.3s ease;
+        }
+
+        .photo-container img:hover {
+            transform: scale(1.1);
+        }
+
+/* photos and details */
+#carts{
+    display: flex;
+    flex-direction: row;
+}
+.photo-block {
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 20px;
+            width: 300px;
+            margin: 20px auto;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .photo-block img {
+            width: 100%;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+
+        .photo-details {
+            font-size: 16px;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .book-button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .book-button:hover {
+            background-color: #0056b3;
+        }
+
+        /* SEARCH BAR */
+        body, html {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
+        .search-container {
+        width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+        }
+
+        .search-bar {
+            margin: 20px;
+            width: 80%;
+            padding: 15px;
+            font-size: 18px;
+            border: 2px solid #ccc;
+            border-radius: 25px;
+            outline: none;
+            transition: border-color 0.3s ease;
+        }
+
+        .search-bar:focus {
+            border-color: #007bff;
+        }
+
+        /* bottom nav bar */
+
+</style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+        <div id="log">
+            <p class="navbar-brand">MAKE MY DAY</p>
+            <sub class="navbar-brand" id="sub">Online booking for events</sub>
+        </div>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <!-- <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Bookings</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Events</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">About</a>
+                </li>
+            </ul>
+        </div> -->
+    </nav>
+    <nav class="navbar">
+        <!-- <div class="navbar-left">
+           
+            <form id="searchForm">
+                <input type="text" id="searchInput" placeholder="Search...">
+                <button type="submit" id="btn">Search</button>
+            </form>
+        </div> -->
+
+        <div class="search-container">
+            <input type="text" class="search-bar" placeholder="Search...">
+        
+        </div>
+       
+        <!-- <div class="navbar-right">
+            <input type="date" id="datePicker">
+            <select id="timeSlot">
+                <option value="morning">Morning</option>
+                <option value="afternoon">Afternoon</option>
+                <option value="evening">Evening</option>
+            </select>
+            <input type="number" id="numSlots" min="1" placeholder="Number of Slots">
+            <button type="submit" id="btn">update</button>
+        </div> -->
+    </nav>
+<hr>
+    <!-- <div class="image-container">
+        <figure>
+            <img src="IMAGES/Day (1).png" alt="Image 1">
+            <figcaption>Image 1</figcaption>
+        </figure>
+        <figure>
+            <img src="IMAGES/Day (1).png" alt="Image 2">
+            <figcaption>Image 2</figcaption>
+        </figure>
+        <figure>
+            <img src="IMAGES/Day (1).png" alt="Image 3">
+            <figcaption>Image 3</figcaption>
+        </figure> -->
+        <!-- Add more images as needed -->
+    </div>
+    <div >
+    <h1 style="color: black;">LOCATIONS</h1>
+        <div class="photo-container">
+            <div id="pic"><img src="IMAGES/vizag.jfif" alt="Location 1" onclick="navigateTo('Location 1')"><center><p>VIZAG</p></center></div>
+            <div id="pic"><img src="IMAGES/download (1).jfif" alt="Location 2" onclick="navigateTo('Location 2')"><center><P>HYDRABAD</P></center></div>
+                <div id="pic"><img src="IMAGES/download (2).jfif" alt="Location 3" onclick="navigateTo('Location 3')"><center><P>CHENNAI</P></center></div>
+                    <div id="pic"><img src="IMAGES/download.jfif" alt="Location 1" onclick="navigateTo('Location 1')"><center><P>MUMBAI</P></center></div>
+                        <div id="pic"><img src="IMAGES/kerla.jfif" alt="Location 2" onclick="navigateTo('Location 2')"><center><P>KERLA</P></center></div>
+                            <div id="pic"><img src="IMAGES/mumbai.jfif" alt="Location 3" onclick="navigateTo('Location 3')"><center><P>DELHI</P></center></div>
+            <!-- Add more images as needed -->
+        </div>
+    </div>
+
+    <hr>
+<!-- photos and details -->
+<div id="carts">
+    <div class="photo-block">
+        <img src="IMAGES/organizer/005.jfif" alt="Photo">
+        <div class="photo-details">
+            <p><strong>ORGANIZERS:</strong> ICONIC MOMENTS</p>
+            <p><strong>LOCATION:</strong> GAJAWAKA</p>
+            <p><strong>COST:</strong> 1799/- +GST</p>
+        </div>
+        <a href="#" class="book-button">Book Now</a>
+    </div>
+    <div class="photo-block">
+        <img src="IMAGES/organizer/006.jfif" alt="Photo">
+        <div class="photo-details">
+            <p><strong>ORGANIZERS:</strong> BINGZ</p>
+            <p><strong>LOCATION:</strong> MVP</p>
+            <p><strong>COST:</strong> 1599/- + GST</p>
+        </div>
+        <a href="#" class="book-button">Book Now</a>
+    </div>
+    <div class="photo-block">
+        <img src="IMAGES/organizer/007.jfif" alt="Photo">
+        <div class="photo-details">
+            <p><strong>ORGANIZERS:</strong> SPECIAL MEMORIES</p>
+            <p><strong>LOCATION:</strong> DUVVADA</p>
+            <p><strong>COST:</strong> 1999/- + GST</p>
+        </div>
+        <a href="#" class="book-button">Book Now</a>
+    
+    </div>
+    <div class="photo-block">
+        <img src="IMAGES/organizer/008.jfif" alt="Photo">
+        <div class="photo-details">
+            <p><strong>ORGANIZERS:</strong> ICONIC MOMENTS</p>
+            <p><strong>LOCATION:</strong> GAJAWAKA</p>
+            <p><strong>COST:</strong> 2799/- + GST</p>
+        </div>
+        <a href="#" class="book-button">Book Now</a>
+  </div> 
+</div>
+
+    <div id="carts">
+        <div class="photo-block">
+            <img src="IMAGES/organizer/download (3).jfif" alt="Photo">
+            <div class="photo-details">
+                <p><strong>ORGANIZERS:</strong> CRATORS BLAG</p>
+            <p><strong>LOCATION:</strong> GAJAWAKA</p>
+            <p><strong>COST:</strong> 4799/- + GST</p>
+            </div>
+            <a href="#" class="book-button">Book Now</a>
+        </div>
+        <div class="photo-block">
+            <img src="IMAGES/organizer/002.jfif" alt="Photo">
+            <div class="photo-details">
+                <p><strong>ORGANIZERS:</strong> ICONIC BLAZ MOMENTS</p>
+                <p><strong>LOCATION:</strong> GAJAWAKA</p>
+                <p><strong>COST:</strong> 1799/- + GST</p>
+            </div>
+            <a href="#" class="book-button">Book Now</a>
+        </div>
+        <div class="photo-block">
+            <img src="IMAGES/organizer/003.jfif" alt="Photo">
+            <div class="photo-details">
+                <p><strong>ORGANIZERS:</strong> MEMORY CREATORS</p>
+            <p><strong>LOCATION:</strong> GAJAWAKA</p>
+            <p><strong>COST:</strong> 2999/- + GST</p>
+            </div>
+            <a href="#" class="book-button">Book Now</a>
+        
+        </div>
+        <div class="photo-block">
+            <img src="IMAGES/organizer/004.jfif" alt="Photo">
+            <div class="photo-details">
+                <p><strong>ORGANIZERS:</strong> SABHA CONVETIONS HALL</p>
+            <p><strong>LOCATION:</strong> GAJAWAKA</p>
+            <p><strong>COST:</strong> 2799/- + GST</p>
+            </div>
+            <a href="#" class="book-button">Book Now</a>
+    </div> 
+        </div>
+    <script>
+        function navigateTo(location) {
+            // Open Google Maps in a new tab with the specified location
+            window.open(`https://www.google.com/maps/search/?api=1&query=${location}`);
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+
+/* Custom Styles */
+#hero {
+    /* background-image: url('https://source.unsplash.com/1600x900/?birthday party'); */
+    background-image: url('bg.jpg');
+    background-color: rgba(0,0,0, 0.3);
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+    color: #fff;
+    /* filter: brightness(50%); */
+}
+
+#booking {
+   
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+    background-color: #f8f9fa;
+}
+
+.navbar-brand {
+    font-weight: bold;
+}
+
+footer {
+    color: #fff;
+}
